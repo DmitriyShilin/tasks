@@ -4,6 +4,7 @@ import areashape.shape.AbstractShape;
 
 public class Triangle extends AbstractShape{
     
+    private String name;
     private double width;
     private double height;
     
@@ -12,7 +13,7 @@ public class Triangle extends AbstractShape{
     }
     
     public Triangle(String name, double width, double height){
-        super(name);
+        this.name = name;
         this.width = width;
         this.height = height;
     }
@@ -21,6 +22,16 @@ public class Triangle extends AbstractShape{
     public double getArea() {
         return width*height;
     }
+    
+    @Override
+    public String getName(){
+        return name;
+    }
+    
+    @Override
+    public void setName(String name){
+        this.name = name;
+    } 
     
     public double getWidth(){
         return width;

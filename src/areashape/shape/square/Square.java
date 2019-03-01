@@ -4,6 +4,7 @@ import areashape.shape.AbstractShape;
 
 public class Square extends AbstractShape{
     
+    private String name;
     private double side;
     
     public Square(){
@@ -11,7 +12,7 @@ public class Square extends AbstractShape{
     }
     
     public Square(String name, double side){
-        super(name);
+        this.name = name;
         this.side = side;
     }
 
@@ -19,6 +20,16 @@ public class Square extends AbstractShape{
     public double getArea() {
         return Math.pow(side, 2.00);
     }
+    
+    @Override
+    public String getName(){
+        return name;
+    }
+    
+    @Override
+    public void setName(String name){
+        this.name = name;
+    } 
     
     public double getSide(){
         return side;
