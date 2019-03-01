@@ -36,4 +36,9 @@ public class Circle extends AbstractShape{
     public void setRadius(double radius){
         this.radius = radius;
     }    
+    
+    @Override
+    public String toString(){
+        return "\nName Shape: " + name + "\n Area = " + getArea() + "\n";
+    }
 }

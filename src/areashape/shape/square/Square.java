@@ -36,4 +36,9 @@ public class Square extends AbstractShape{
     public void setSide(double side){
         this.side = side;
     }       
+    
+    @Override
+    public String toString(){
+        return "\nName Shape: " + name + "\n Area = " + getArea() + "\n";
+    }
 }

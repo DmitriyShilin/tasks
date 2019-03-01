@@ -46,4 +46,9 @@ public class Triangle extends AbstractShape{
     public void setHeight(double height){
         this.height = height;
     }  
+    
+    @Override
+    public String toString(){
+        return "\nName Shape: " + name + "\n Area = " + getArea() + "\n";
+    }
 }
