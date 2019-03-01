@@ -20,18 +20,18 @@ public class MainApp {
     public static void main(String[] args) {
         
         //Create Circle, Square и Triangle
-        Circle circle1 = new Circle("Circle_R=2.00", 2.00);
+        Circle circle1 = new Circle(2.0);
         Circle circle2 = new Circle();
-        circle2.setRadius(3.00);
+        circle2.setRadius(3.0);
         
-        Square square1 = new Square("Square_S=2.00", 2.00);
+        Square square1 = new Square(2.0);
         Square square2 = new Square();
-        square2.setSide(3.00);
+        square2.setSide(3.0);
         
-        Triangle triangle1 = new Triangle("Triangle_W=2.00_H=2.00", 2.00, 2.00);
+        Triangle triangle1 = new Triangle(2.0, 2.0);
         Triangle triangle2 = new Triangle();
-        triangle2.setHeight(3.00);
-        triangle2.setWidth(3.00);
+        triangle2.setHeight(3.0);
+        triangle2.setWidth(3.0);
         
         //Create collecxtion Shape and added Circle, Square и Triangle
         List<Shape> shapes = new LinkedList<>();
@@ -56,9 +56,7 @@ public class MainApp {
         
         //print name and area into AreaShape.log
         for(Shape shape: shapes){
-            //System.out.println("Name Shape: " + shape.getName() + "\nArea = " + shape.getArea() + "\n");
-            //LOGGER.info("\nName Shape: " + shape.getClass().getSimpleName() + "\n Area = " + shape.getArea() + "\n");
-            LOGGER.info(shape.toString());
+            LOGGER.info("Name Shape: " + shape.getClass().getSimpleName() + " Area = " + shape.getArea());            
         }        
     }
 }

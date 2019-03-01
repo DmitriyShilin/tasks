@@ -4,15 +4,13 @@ import areashape.shape.AbstractShape;
 
 public class Circle extends AbstractShape{
     
-    private String name;    
     private double radius;    
     
     public Circle(){
-        this("Circle", 0.00);
+        this(0.0);
     }
     
-    public Circle(String name, double radius){
-        this.name = name;
+    public Circle(double radius){
         this.radius = radius;
     }
 
@@ -21,24 +19,11 @@ public class Circle extends AbstractShape{
         return Math.PI*Math.pow(radius, 2.00);
     }
         
-    public String getName(){
-        return name;
-    }
-        
-    public void setName(String name){
-        this.name = name;
-    } 
-    
     public double getRadius(){
         return radius;
     }
     
     public void setRadius(double radius){
         this.radius = radius;
-    }    
-    
-    @Override
-    public String toString(){
-        return "\nName Shape: " + name + "\n Area = " + getArea() + "\n";
-    }
+    } 
 }

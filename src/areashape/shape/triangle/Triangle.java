@@ -2,18 +2,16 @@ package areashape.shape.triangle;
 
 import areashape.shape.AbstractShape;
 
-public class Triangle extends AbstractShape{
+public class Triangle extends AbstractShape{    
     
-    private String name;
     private double width;
     private double height;
     
     public Triangle(){
-        this("Triangle", 0.00, 0.00);
+        this(0.0, 0.0);
     }
     
-    public Triangle(String name, double width, double height){
-        this.name = name;
+    public Triangle(double width, double height){        
         this.width = width;
         this.height = height;
     }
@@ -22,14 +20,6 @@ public class Triangle extends AbstractShape{
     public double getArea() {
         return width*height;
     }
-    
-    public String getName(){
-        return name;
-    }
-    
-    public void setName(String name){
-        this.name = name;
-    } 
     
     public double getWidth(){
         return width;
@@ -45,10 +35,5 @@ public class Triangle extends AbstractShape{
     
     public void setHeight(double height){
         this.height = height;
-    }  
-    
-    @Override
-    public String toString(){
-        return "\nName Shape: " + name + "\n Area = " + getArea() + "\n";
-    }
+    }      
 }
