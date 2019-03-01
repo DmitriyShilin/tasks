@@ -23,12 +23,10 @@ public class Triangle extends AbstractShape{
         return width*height;
     }
     
-    @Override
     public String getName(){
         return name;
     }
     
-    @Override
     public void setName(String name){
         this.name = name;
     } 

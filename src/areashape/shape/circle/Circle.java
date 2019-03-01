@@ -20,13 +20,11 @@ public class Circle extends AbstractShape{
     public double getArea() {
         return Math.PI*Math.pow(radius, 2.00);
     }
-    
-    @Override
+        
     public String getName(){
         return name;
     }
-    
-    @Override
+        
     public void setName(String name){
         this.name = name;
     } 

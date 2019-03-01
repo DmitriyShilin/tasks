@@ -57,7 +57,7 @@ public class MainApp {
         //print name and area into AreaShape.log
         for(Shape shape: shapes){
             //System.out.println("Name Shape: " + shape.getName() + "\nArea = " + shape.getArea() + "\n");
-            LOGGER.info("\nName Shape: " + shape.getName() + "\n Area = " + shape.getArea() + "\n");
+            LOGGER.info("\nName Shape: " + shape.getClass().getName() + "\n Area = " + shape.getArea() + "\n");
         }        
     }
 }

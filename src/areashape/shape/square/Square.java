@@ -21,12 +21,10 @@ public class Square extends AbstractShape{
         return Math.pow(side, 2.00);
     }
     
-    @Override
     public String getName(){
         return name;
     }
     
-    @Override
     public void setName(String name){
         this.name = name;
     } 
