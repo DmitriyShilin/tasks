@@ -14,12 +14,12 @@ import java.util.logging.SimpleFormatter;
 
 public class MainApp {
     
-    private static final Logger LOGGER = Logger.getLogger(MainApp.class.getName());
-    private static FileHandler handler =null;
+    private static Logger LOGGER = null;
+    private static FileHandler handler = null;
     
     public static void main(String[] args) {
         
-        //Создадим пару объектов Circle, Square и Triangle
+        //Create Circle, Square и Triangle
         Circle circle1 = new Circle("Circle_R=2.00", 2.00);
         Circle circle2 = new Circle();
         circle2.setRadius(3.00);
@@ -33,7 +33,7 @@ public class MainApp {
         triangle2.setHeight(3.00);
         triangle2.setWidth(3.00);
         
-        //Сделаем колекцию Shape и добавим в нее Circle, Square и Triangle
+        //Create collecxtion Shape and added Circle, Square и Triangle
         List<Shape> shapes = new LinkedList<>();
         shapes.add(circle1);
         shapes.add(circle2);
@@ -42,18 +42,19 @@ public class MainApp {
         shapes.add(triangle1);
         shapes.add(triangle2);
         
-        //настройка LOGGER        
+        //tuning LOGGER        
         try {
             handler = new FileHandler("C:/log/AreaShape.log", false);            
         } catch (IOException | SecurityException ex) {
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, ex.toString(), ex);
         } 
         handler.setFormatter(new SimpleFormatter());
+        LOGGER = Logger.getLogger(MainApp.class.getName());
         LOGGER.addHandler(handler);
         LOGGER.setLevel(Level.INFO);
         LOGGER.setUseParentHandlers(false);
         
-        //вывод имени фигуры и площади в AreaShape.log
+        //print name and area into AreaShape.log
         for(Shape shape: shapes){
             //System.out.println("Name Shape: " + shape.getName() + "\nArea = " + shape.getArea() + "\n");
             LOGGER.info("\nName Shape: " + shape.getName() + "\n Area = " + shape.getArea() + "\n");
