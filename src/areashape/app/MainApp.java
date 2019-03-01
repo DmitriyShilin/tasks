@@ -54,9 +54,10 @@ public class MainApp {
         LOGGER.setLevel(Level.INFO);
         LOGGER.setUseParentHandlers(false);
         
-        //print name and area into AreaShape.log
+        //print name and area into AreaShape.log        
         for(Shape shape: shapes){
-            LOGGER.info("Name Shape: " + shape.getClass().getSimpleName() + " Area = " + shape.getArea());            
+            LOGGER.info("Name Shape: " + shape.getClass().getSimpleName() + " Area = " + shape.getArea()); 
+            
         }        
     }
 }
