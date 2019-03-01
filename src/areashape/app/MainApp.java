@@ -6,8 +6,16 @@ import areashape.shape.Shape;
 import areashape.shape.circle.Circle;
 import areashape.shape.square.Square;
 import areashape.shape.triangle.Triangle;
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class MainApp {
+    
+    private static final Logger LOGGER = Logger.getLogger(MainApp.class.getName());
+    private static FileHandler handler =null;
     
     public static void main(String[] args) {
         
@@ -34,8 +42,21 @@ public class MainApp {
         shapes.add(triangle1);
         shapes.add(triangle2);
         
+        //настройка LOGGER        
+        try {
+            handler = new FileHandler("C:/log/AreaShape.log", false);            
+        } catch (IOException | SecurityException ex) {
+            Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, ex.toString(), ex);
+        } 
+        handler.setFormatter(new SimpleFormatter());
+        LOGGER.addHandler(handler);
+        LOGGER.setLevel(Level.INFO);
+        LOGGER.setUseParentHandlers(false);
+        
+        //вывод имени фигуры и площади в AreaShape.log
         for(Shape shape: shapes){
-            System.out.println("Name Shape: " + shape.getName() + "\nArea = " + shape.getArea() + "\n");
+            //System.out.println("Name Shape: " + shape.getName() + "\nArea = " + shape.getArea() + "\n");
+            LOGGER.info("\nName Shape: " + shape.getName() + "\n Area = " + shape.getArea() + "\n");
         }        
     }
 }
