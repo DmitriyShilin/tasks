@@ -8,7 +8,7 @@ public class TriangleTest {
     @Test
     public void testGetArea() {
         Triangle instance = new Triangle(1.0, 1.0);
-        double expResult = 1.0;
+        double expResult = 0.5;
         double result = instance.getArea();
         assertEquals(expResult, result, 0.1);        
     }

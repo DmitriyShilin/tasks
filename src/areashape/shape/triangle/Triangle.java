@@ -18,7 +18,7 @@ public class Triangle extends AbstractShape{
 
     @Override
     public double getArea() {
-        return width*height;
+        return 0.5*width*height;
     }
     
     public double getWidth(){

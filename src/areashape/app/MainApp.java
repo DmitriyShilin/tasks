@@ -52,12 +52,30 @@ public class MainApp {
         LOGGER = Logger.getLogger(MainApp.class.getName());
         LOGGER.addHandler(handler);
         LOGGER.setLevel(Level.INFO);
-        LOGGER.setUseParentHandlers(false);
+        LOGGER.setUseParentHandlers(false);        
         
-        //print name and area into AreaShape.log        
+        //print name and area into AreaShape.log  
         for(Shape shape: shapes){
-            LOGGER.info("Name Shape: " + shape.getClass().getSimpleName() + " Area = " + shape.getArea()); 
-            
-        }        
+            LOGGER.info("Name Shape: " + shape.getClass().getSimpleName() + " Area = " + shape.getArea());            
+        }   
+        
+        //add max and min area into AreaShape.log  
+        double maxArea = 0.0;
+        String maxName = null;
+        double minArea = Double.MAX_VALUE;
+        String minName = null;
+        for(Shape shape: shapes){
+            if(shape.getArea()> maxArea){
+                maxArea = shape.getArea();
+                maxName = shape.getClass().getSimpleName();
+            }
+            if(shape.getArea()< minArea){
+                minArea = shape.getArea();
+                minName = shape.getClass().getSimpleName();
+            }
+        } 
+        
+        LOGGER.info("Max Area: " + maxName + " = " + maxArea);
+        LOGGER.info("Min Area: " + minName + " = " + minArea);
     }
 }
